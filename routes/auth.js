@@ -21,7 +21,8 @@ router.post('/saccologin', (req, res, next) => {
             console.log(err);
         } else {
             res.json({
-                ok: true
+                ok: true,
+                data: result
             });
         }
     });
@@ -100,9 +101,21 @@ router.post('/driversignup', (req, res, next) => {
         if(result == null) {
             //no such driver
             var newDriver = new Driver({
+                numberplate: "",
                 email: email,
                 username: username,
-                password: password
+                password: password,
+                phonenumber: null,
+                currentRoute: "",
+                available: false,
+                employed: false,
+                on_route: false,
+                currently_to: "",
+                currently_from: "",
+                employer: {
+                    employername: "",
+                    employermail: ""
+                }
             });
 
             newDriver.save((err, result) => {

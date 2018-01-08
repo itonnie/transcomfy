@@ -13,6 +13,34 @@ router.get("/func", (req, res, next) => {
     });
 });
 
+router.get('/to', (req, res, next) => {
+    Bus.find((err, result) => {
+        var tos = [];
+        result.forEach(function(item) {
+            tos.push({
+                to: item.to
+            });
+        });
+        res.json({
+            data: tos
+        });
+    });
+});
+
+router.get('/from', (req, res, next) => {
+    Bus.find((err, result) => {
+        var froms = [];
+        result.forEach(function(item) {
+            froms.push({
+                from: item.from
+            });
+        });
+        res.json({
+            data: froms
+        });
+    });
+})
+
 //let users see all the routes to select a pickup point from a specific route
 //sends back a list of all routes selecting distinct values from the database
 router.get('/viewroutes', (req, res, next) => {

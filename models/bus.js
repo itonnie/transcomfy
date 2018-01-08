@@ -3,8 +3,11 @@ var mongoose = require("mongoose");
 
 var busSchema = mongoose.Schema({
     numberplate: String,
+    model: String,
     ownername: String,
     ownermail: String,
+    driver_name: String,
+    driver_mail: String,
     route: String,
     to: String,
     from: String,
@@ -12,6 +15,10 @@ var busSchema = mongoose.Schema({
     arrival: Date,
     stops: Array,
     passengers: Number,
+    currentPassengers: [{
+        username: String,
+        email: String
+    }],
     seats: Number,
     currentStop: String,
     reviews: [
