@@ -4,91 +4,6 @@ webpackJsonp([5],{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddbusPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_localdata__ = __webpack_require__(30);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var AddbusPage = (function () {
-    function AddbusPage(navCtrl, navParams, view, toast, local) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.view = view;
-        this.toast = toast;
-        this.local = local;
-        this.username = this.navParams.get("username");
-        this.email = this.navParams.get("email");
-    }
-    AddbusPage.prototype.ionViewDidLoad = function () {
-    };
-    AddbusPage.prototype.addNewBus = function (e) {
-        var _this = this;
-        if (this.numberplate == undefined) {
-            var toast = this.toast.create({
-                message: "Fill in the numberplate field",
-                cssClass: "danger",
-                duration: 2000,
-                position: "top"
-            });
-            toast.present();
-        }
-        else if (this.route == undefined) {
-            var toast = this.toast.create({
-                message: "Fill in the route field",
-                cssClass: "danger",
-                duration: 2000,
-                position: "top"
-            });
-            toast.present();
-        }
-        else if (this.seats == undefined) {
-            var toast = this.toast.create({
-                message: "Fill in the bus seats field",
-                cssClass: "danger",
-                duration: 2000,
-                position: "top"
-            });
-            toast.present();
-        }
-        else {
-            this.local.addBus(this.numberplate, this.username, this.email, this.route, this.seats, this.busmodel)
-                .subscribe(function (response) {
-                _this.view.dismiss({ buses: response.data }, "popover");
-            });
-        }
-    };
-    AddbusPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-addbus',template:/*ion-inline-start:"E:\Projects\sharon\site\src\pages\addbus\addbus.html"*/'<!--\n  Generated template for the AddbusPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Add a new bus to your collection</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <br />\n  <br />\n  <ion-item>\n    <ion-label floating>Number Plate</ion-label>\n    <ion-input type="text" name="numberplate" [(ngModel)]="numberplate"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Bus Model</ion-label>\n    <ion-input type="text" name="model" [(ngModel)]="busmodel"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Route</ion-label>\n    <ion-input type="text" name="numberplate" [(ngModel)]="route"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Seats</ion-label>\n    <ion-input type="number" name="numberplate" [(ngModel)]="seats"></ion-input>\n  </ion-item>\n\n  <button ion-button full (click)="addNewBus($event)">Add Bus</button>\n\n</ion-content>\n'/*ion-inline-end:"E:\Projects\sharon\site\src\pages\addbus\addbus.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_2__services_localdata__["a" /* LocalData */]])
-    ], AddbusPage);
-    return AddbusPage;
-}());
-
-//# sourceMappingURL=addbus.js.map
-
-/***/ }),
-
-/***/ 103:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverhomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
@@ -162,14 +77,14 @@ var DriverhomePage = (function () {
 
 /***/ }),
 
-/***/ 104:
+/***/ 103:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverpopPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__driverhome_driverhome__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__driverhome_driverhome__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_localdata__ = __webpack_require__(30);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -288,6 +203,91 @@ var DriverpopPage = (function () {
 }());
 
 //# sourceMappingURL=driverpop.js.map
+
+/***/ }),
+
+/***/ 104:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddbusPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_localdata__ = __webpack_require__(30);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AddbusPage = (function () {
+    function AddbusPage(navCtrl, navParams, view, toast, local) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.view = view;
+        this.toast = toast;
+        this.local = local;
+        this.username = this.navParams.get("username");
+        this.email = this.navParams.get("email");
+    }
+    AddbusPage.prototype.ionViewDidLoad = function () {
+    };
+    AddbusPage.prototype.addNewBus = function (e) {
+        var _this = this;
+        if (this.numberplate == undefined) {
+            var toast = this.toast.create({
+                message: "Fill in the numberplate field",
+                cssClass: "danger",
+                duration: 2000,
+                position: "top"
+            });
+            toast.present();
+        }
+        else if (this.route == undefined) {
+            var toast = this.toast.create({
+                message: "Fill in the route field",
+                cssClass: "danger",
+                duration: 2000,
+                position: "top"
+            });
+            toast.present();
+        }
+        else if (this.seats == undefined) {
+            var toast = this.toast.create({
+                message: "Fill in the bus seats field",
+                cssClass: "danger",
+                duration: 2000,
+                position: "top"
+            });
+            toast.present();
+        }
+        else {
+            this.local.addBus(this.numberplate, this.username, this.email, this.route, this.seats, this.busmodel)
+                .subscribe(function (response) {
+                _this.view.dismiss({ buses: response.data }, "popover");
+            });
+        }
+    };
+    AddbusPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-addbus',template:/*ion-inline-start:"E:\Projects\sharon\site\src\pages\addbus\addbus.html"*/'<!--\n  Generated template for the AddbusPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Add a new bus to your collection</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <br />\n  <br />\n  <ion-item>\n    <ion-label floating>Number Plate</ion-label>\n    <ion-input type="text" name="numberplate" [(ngModel)]="numberplate"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Bus Model</ion-label>\n    <ion-input type="text" name="model" [(ngModel)]="busmodel"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Route</ion-label>\n    <ion-input type="text" name="numberplate" [(ngModel)]="route"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Seats</ion-label>\n    <ion-input type="number" name="numberplate" [(ngModel)]="seats"></ion-input>\n  </ion-item>\n\n  <button ion-button full (click)="addNewBus($event)">Add Bus</button>\n\n</ion-content>\n'/*ion-inline-end:"E:\Projects\sharon\site\src\pages\addbus\addbus.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_2__services_localdata__["a" /* LocalData */]])
+    ], AddbusPage);
+    return AddbusPage;
+}());
+
+//# sourceMappingURL=addbus.js.map
 
 /***/ }),
 
@@ -429,23 +429,23 @@ webpackEmptyAsyncContext.id = 116;
 
 var map = {
 	"../pages/addbus/addbus.module": [
-		279,
+		282,
 		4
 	],
 	"../pages/driverhome/driverhome.module": [
-		280,
+		279,
 		3
 	],
 	"../pages/driverpop/driverpop.module": [
-		281,
+		280,
 		2
 	],
 	"../pages/sacco-auth-pop-over/sacco-auth-pop-over.module": [
-		282,
+		283,
 		1
 	],
 	"../pages/saccoowner/saccoowner.module": [
-		283,
+		281,
 		0
 	]
 };
@@ -494,9 +494,9 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_sacco_auth_pop_over_sacco_auth_pop_over__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_saccoowner_saccoowner__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_driverpop_driverpop__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_driverhome_driverhome__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_addbus_addbus__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_driverpop_driverpop__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_driverhome_driverhome__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_addbus_addbus__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_localdata__ = __webpack_require__(30);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -539,11 +539,11 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/addbus/addbus.module#AddbusPageModule', name: 'AddbusPage', segment: 'addbus', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/driverhome/driverhome.module#DriverhomePageModule', name: 'DriverhomePage', segment: 'driverhome', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/driverpop/driverpop.module#DriverpopPageModule', name: 'DriverpopPage', segment: 'driverpop', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/sacco-auth-pop-over/sacco-auth-pop-over.module#SaccoAuthPopOverPageModule', name: 'SaccoAuthPopOverPage', segment: 'sacco-auth-pop-over', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/saccoowner/saccoowner.module#SaccoownerPageModule', name: 'SaccoownerPage', segment: 'saccoowner', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/saccoowner/saccoowner.module#SaccoownerPageModule', name: 'SaccoownerPage', segment: 'saccoowner', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/addbus/addbus.module#AddbusPageModule', name: 'AddbusPage', segment: 'addbus', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/sacco-auth-pop-over/sacco-auth-pop-over.module#SaccoAuthPopOverPageModule', name: 'SaccoAuthPopOverPage', segment: 'sacco-auth-pop-over', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],
@@ -646,17 +646,17 @@ var LocalData = (function () {
     LocalData.prototype.getBuses = function (name) {
         var offline = "http://localhost:3000/sacco/buses/" + name;
         //var online = "http://transcomfy.herokuapp.com/sacco/buses/"+ name;
-        return this.http.get("http://transcomfy.herokuapp.com/sacco/buses/" + name).map(function (res) { return res.json(); });
+        return this.http.get("https://transcomfy.herokuapp.com/sacco/buses/" + name).map(function (res) { return res.json(); });
     };
     LocalData.prototype.busDetail = function (numberplate) {
         var offline = "http://localhost:3000/sacco/busdetail/" + numberplate;
         //var online = "http://transcomfy.herokuapp.com/sacco/busdetail"+ numberplate;
-        return this.http.get("http://transcomfy.herokuapp.com/sacco/busdetail" + numberplate).map(function (res) { return res.json(); });
+        return this.http.get("https://transcomfy.herokuapp.com/sacco/busdetail/" + numberplate).map(function (res) { return res.json(); });
     };
     LocalData.prototype.addBus = function (numberplate, name, mail, route, seats, busmodel) {
         var offline = "http://localhost:3000/sacco/addbus";
         //var online = "http://transcomfy.herokuapp.com/sacco/addbus";
-        return this.http.post("http://transcomfy.herokuapp.com/sacco/addbus", {
+        return this.http.post("https://transcomfy.herokuapp.com/sacco/addbus", {
             numberplate: numberplate,
             ownername: name,
             ownermail: mail,
@@ -736,9 +736,10 @@ var LocalData = (function () {
     };
     LocalData = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object])
     ], LocalData);
     return LocalData;
+    var _a;
 }());
 
 //# sourceMappingURL=localdata.js.map
@@ -752,7 +753,7 @@ var LocalData = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SaccoownerPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__addbus_addbus__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__addbus_addbus__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_localdata__ = __webpack_require__(30);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -902,7 +903,7 @@ var SaccoownerPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sacco_auth_pop_over_sacco_auth_pop_over__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__saccoowner_saccoowner__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__driverpop_driverpop__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__driverpop_driverpop__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_localdata__ = __webpack_require__(30);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
